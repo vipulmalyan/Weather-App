@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.set_page_config(layout="wide",theme="night")
+st.set_page_config(layout="wide")
 
 def get_weather_data(api_key, city):
     weather_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={city}&units=imperial&APPID={api_key}")
