@@ -100,7 +100,7 @@ div[data-testid="stImage"] {
 }
 
 /* Hide "Fork this app" link */
-a[href^="https://github.com/your_username/your_repo/fork"] {
+a[href^="https://github.com/vipulmalyan/Weather-App/fork"] {
     display: none !important;
 }
 </style>
