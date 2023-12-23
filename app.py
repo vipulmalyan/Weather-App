@@ -85,9 +85,9 @@ footer_html = """
 """
 st.markdown(footer_html, unsafe_allow_html=True)
 
-hide_streamlit_style = """
-            <style>
-                #MainMenu { visibility: hidden; }
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+custom_css = """
+<style>
+#MainMenu { display: none; }
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
