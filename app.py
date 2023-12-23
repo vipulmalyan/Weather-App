@@ -91,3 +91,18 @@ custom_css = """
 </style>
 """
 st.markdown(custom_css, unsafe_allow_html=True)
+
+custom_css = """
+<style>
+/* Hide GitHub icon */
+div[data-testid="stImage"] {
+    display: none !important;
+}
+
+/* Hide "Fork this app" link */
+a[href^="https://github.com/your_username/your_repo/fork"] {
+    display: none !important;
+}
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
