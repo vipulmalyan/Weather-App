@@ -11,9 +11,6 @@ def get_weather_data(api_key, city):
     else:
         return weather_data.json()
 
-
-
-
 def main():
     st.title("Weather App")
 
@@ -24,7 +21,7 @@ def main():
     if st.button("Get Weather"):
         weather_json = get_weather_data(api_key, user_input)
         
-        if weather_json:
+        if weather_json and 'weather' in weather_json and len(weather_json['weather']) > 0 and 'main' in weather_json['weather'][0] and 'main' in weather_json:
             weather = weather_json['weather'][0]['main']
             temp_fahrenheit = weather_json['main']['temp']
             temp_celsius = (temp_fahrenheit - 32) * 5/9
@@ -44,11 +41,10 @@ def main():
                 unsafe_allow_html=True
             )
         else:
-            st.warning("No City Found")
+            st.warning("No Weather Data Found")
 
 if __name__ == "__main__":
     main()
-    
 
 page_bg_img = '''
 <style>
@@ -60,14 +56,11 @@ background-size: cover;
 '''
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-
-    
 hide_st_style = '''
 <style> footer {visibility: hidden;} 
 </style>
 '''
 st.markdown(hide_st_style, unsafe_allow_html=True)
-
 
 footer_html = """
 <style>
@@ -88,12 +81,6 @@ st.markdown(footer_html, unsafe_allow_html=True)
 custom_css = """
 <style>
 #MainMenu { display: none; }
-</style>
-"""
-st.markdown(custom_css, unsafe_allow_html=True)
-
-custom_css = """
-<style>
 /* Hide GitHub icon */
 div[data-testid="stImage"] {
     display: none !important;
