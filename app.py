@@ -78,11 +78,11 @@ footer_html = """
 """
 st.markdown(footer_html, unsafe_allow_html=True)
 
-hide_menu_css = """
-<style>
-/* Hide GitHub icon */
-#MainMenu { display: none !important; }
-</style>
+# Add custom CSS to hide the GitHub icon
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
 """
-st.markdown(hide_menu_css, unsafe_allow_html=True)
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 
