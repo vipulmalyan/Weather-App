@@ -78,18 +78,11 @@ footer_html = """
 """
 st.markdown(footer_html, unsafe_allow_html=True)
 
-custom_css = """
+hide_menu_css = """
 <style>
-#MainMenu { display: none; }
 /* Hide GitHub icon */
-div[data-testid="stImage"] {
-    display: none !important;
-}
-
-/* Hide "Fork this app" link */
-a[href^="https://github.com/vipulmalyan/Weather-App/fork"] {
-    display: none !important;
-}
+#MainMenu { display: none !important; }
 </style>
 """
-st.markdown(custom_css, unsafe_allow_html=True)
+st.markdown(hide_menu_css, unsafe_allow_html=True)
+
